@@ -1,0 +1,85 @@
+// tontera de inicio y ports
+import java.util.ArrayList;
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author andre
+ */
+public class pantalla1 extends javax.swing.JFrame {
+    metodos pepe=new metodos();
+    /**
+     * Creates new form pantalla1
+     */
+    public pantalla1() {
+        initComponents();
+        this.setLocationRelativeTo(null);
+    }
+
+
+//el field pa poner el numero
+private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // TODO add your handling code here:4
+        Scanner leer=new Scanner(System.in);
+        int a=leer.nextInt();
+    }                    
+
+
+//y el main aqunque creo q no lo ocupas
+public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(pantalla1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(pantalla1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(pantalla1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(pantalla1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new pantalla1().setVisible(true);
+            }
+        });
+    }
+
+
+//boton de chamba
+private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+        ArrayList<String> dia = null;
+        int day = 0;
+        ArrayList<String> agregar = null;
+        int opcion = 0; 
+        String dia_validar = null;
+        JOptionPane.showMessageDialog(rootPane,jList1.getSelectedValue());
+        JOptionPane.showMessageDialog(rootPane,jTextField1.getText());
+        JOptionPane.showMessageDialog(null,"algo god");
+        int diaz=pepe.dias(dia, day, agregar, opcion, dia_validar);
+        String algo="";
+        JOptionPane.showMessageDialog(null,algo);
+        if(diaz==0){
+            algo="El dia fue agendado.";
+        }
+        if(diaz==1){
+            algo="El día ya está agendado.";
+        }
+        JOptionPane.showMessageDialog(null,"algo god");
+        JOptionPane.showMessageDialog(null,algo);
+    }   
